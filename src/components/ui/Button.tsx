@@ -1,7 +1,9 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import { VariantProps, cva } from "class-variance-authority";
 import { Loader2 } from "lucide-react";
-import React, { ButtonHTMLAttributes, FC } from "react";
+import React, { ButtonHTMLAttributes, FC, MouseEventHandler } from "react";
 
 const buttonVariants = cva(
   `scale-95 inline-flex justify-center items-center rounded-md text-sm font-medium transition-color focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 disables:opacity-50 disabled:pointer-events-none`,
@@ -25,6 +27,7 @@ export interface ButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   isLoading?: boolean;
+  handleClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
 const Button: FC<ButtonProps> = ({
@@ -33,10 +36,12 @@ const Button: FC<ButtonProps> = ({
   variant,
   isLoading,
   size,
+  handleClick,
   ...props
 }) => {
   return (
     <button
+      onClick={handleClick}
       className={cn(buttonVariants({ variant, size, className }))}
       disabled={isLoading}
       {...props}
