@@ -181,7 +181,9 @@ const DashboardLayout: FC<DashboardLayoutProps> = ({ children }) => {
                   </div>
                   <div className="flex-1">
                     <div className="flex justify-between items-center">
-                      <h3 className="text-md font-medium">{data.name}</h3>
+                      <h3 className="text-md first-letter:font-medium">
+                        {data.name}
+                      </h3>
                       <p className="text-sm text-gray-500">{data.time}</p>
                     </div>
                     <p className="text-sm text-gray-500">{data.msg}</p>
