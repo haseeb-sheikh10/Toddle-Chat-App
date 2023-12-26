@@ -22,18 +22,15 @@ const page: FC<pageProps> = () => {
           </h1>
           <h3>
             or{" "}
-            <Link
-              href="/auth/signup"
-              className="text-[#fe4c40] hover:underline"
-            >
+            <Link href="/auth/signup" className="text-primary hover:underline">
               SIGN UP
             </Link>
           </h3>
           <LoginForm />
         </div>
       </div>
-      <div className="hidden md:block my-auto rounded-md">
-        <Image src={img} alt="" className="rounded-md" />
+      <div className="hidden md:block my-auto rounded-xl">
+        <Image src={img} alt="" className="rounded-xl" />
       </div>
     </>
   );

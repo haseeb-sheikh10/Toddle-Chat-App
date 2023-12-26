@@ -3,7 +3,6 @@
 import { FC, useEffect } from "react";
 
 interface signupFormProps {}
-import "./form.css";
 import Image from "next/image";
 import atIcon from "@/assets/at-the-rate-icon.svg";
 import accountIcon from "@/assets/account.svg";
@@ -13,6 +12,7 @@ import {
   handleConfirmPass,
   updateSignUpCreds,
 } from "@/app/redux/actions/authAction";
+import "./input.css";
 
 const SignupForm: FC<signupFormProps> = () => {
   const { signUpCreds } = useAppSelector((state) => state.auth);
@@ -96,7 +96,7 @@ const SignupForm: FC<signupFormProps> = () => {
         />
       </div>
       <Button
-        className="mt-12 w-[80%] text-lg bg-[#fe4c40]"
+        className="mt-12 w-[80%] text-lg bg-primary"
         handleClick={() => {}}
       >
         Create Account

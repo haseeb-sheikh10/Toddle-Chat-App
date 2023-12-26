@@ -10,8 +10,8 @@ const page: FC<pageProps> = () => {
   return (
     <>
       {" "}
-      <div className="hidden md:block my-auto rounded-md">
-        <Image src={img} alt="" className="rounded-md" />
+      <div className="hidden md:block my-auto rounded-xl">
+        <Image src={img} alt="" className="rounded-xl" />
       </div>
       <div className="my-auto">
         <div className="flex flex-col items-center">
@@ -20,7 +20,7 @@ const page: FC<pageProps> = () => {
           </h1>
           <h3>
             or{" "}
-            <Link href="/auth/login" className="text-[#fe4c40] hover:underline">
+            <Link href="/auth/login" className="text-primary hover:underline">
               SIGN IN
             </Link>
           </h3>

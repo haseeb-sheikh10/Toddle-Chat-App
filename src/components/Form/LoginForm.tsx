@@ -3,12 +3,12 @@
 import { FC, useEffect } from "react";
 
 interface loginFormProps {}
-import "./form.css";
 import Image from "next/image";
 import atIcon from "@/assets/at-the-rate-icon.svg";
 import Button from "../ui/Button";
 import { useAppDispatch, useAppSelector } from "@/app/redux/hook";
 import { updateSignInCreds } from "@/app/redux/actions/authAction";
+import "./input.css";
 
 const LoginForm: FC<loginFormProps> = () => {
   const { signInCreds } = useAppSelector((state) => state.auth);
@@ -53,7 +53,7 @@ const LoginForm: FC<loginFormProps> = () => {
         />
       </div>
       <Button
-        className="mt-12 w-[80%] text-lg bg-[#fe4c40]"
+        className="mt-12 w-[80%] text-lg bg-primary"
         handleClick={() => {}}
       >
         LOGIN
