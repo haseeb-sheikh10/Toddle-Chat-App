@@ -17,7 +17,7 @@ body {
 
 .boxShadow:hover {
   outline: none;
-  border-color: #fe4c40;
+  border-color: var(--primary-color);
   background-color: #fff;
   box-shadow: 0 0 0 5px rgb(129 140 248 / 30%);
   transition: 0.5s ease;

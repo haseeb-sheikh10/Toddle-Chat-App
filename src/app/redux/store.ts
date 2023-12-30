@@ -2,10 +2,12 @@
 
 import { configureStore } from "@reduxjs/toolkit";
 import auth from "@/app/redux/slices/authSlice";
+import addFriend from "@/app/redux/slices/addFriendSlice";
 
 export const store = configureStore({
   reducer: {
     auth,
+    addFriend,
   },
 });
 

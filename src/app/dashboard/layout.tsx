@@ -5,8 +5,10 @@ import inlineLogo from "@/assets/inline-logo.png";
 import "@/components/Form/input.css";
 import { BellRing, Search } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FC, ReactNode } from "react";
+import { inboxData } from "./(inbox)/data";
 interface DashboardLayoutProps {
   children: ReactNode;
 }
@@ -14,92 +16,6 @@ interface DashboardLayoutProps {
 const DashboardLayout: FC<DashboardLayoutProps> = ({ children }) => {
   const pathname = usePathname();
 
-  const inboxData = [
-    {
-      name: "haseeb irfan",
-      time: "10:12",
-      msg: "Hello How are you?",
-      image: avatar,
-    },
-    {
-      name: "haseeb irfan",
-      time: "10:12",
-      msg: "Hello How are you?",
-      image: avatar,
-    },
-    {
-      name: "haseeb irfan",
-      time: "10:12",
-      msg: "Hello How are you?",
-      image: avatar,
-    },
-    {
-      name: "haseeb irfan",
-      time: "10:12",
-      msg: "Hello How are you?",
-      image: avatar,
-    },
-    {
-      name: "haseeb irfan",
-      time: "10:12",
-      msg: "Hello How are you?",
-      image: avatar,
-    },
-    {
-      name: "haseeb irfan",
-      time: "10:12",
-      msg: "Hello How are you?",
-      image: avatar,
-    },
-    {
-      name: "haseeb irfan",
-      time: "10:12",
-      msg: "Hello How are you?",
-      image: avatar,
-    },
-    {
-      name: "haseeb irfan",
-      time: "10:12",
-      msg: "Hello How are you?",
-      image: avatar,
-    },
-    {
-      name: "haseeb irfan",
-      time: "10:12",
-      msg: "Hello How are you?",
-      image: avatar,
-    },
-    {
-      name: "haseeb irfan",
-      time: "10:12",
-      msg: "Hello How are you?",
-      image: avatar,
-    },
-    {
-      name: "haseeb irfan",
-      time: "10:12",
-      msg: "Hello How are you?",
-      image: avatar,
-    },
-    {
-      name: "haseeb irfan",
-      time: "10:12",
-      msg: "Hello How are you?",
-      image: avatar,
-    },
-    {
-      name: "haseeb irfan",
-      time: "10:12",
-      msg: "Hello How are you?",
-      image: avatar,
-    },
-    {
-      name: "haseeb irfan",
-      time: "10:12",
-      msg: "Hello How are you?",
-      image: avatar,
-    },
-  ];
   return (
     <>
       <div className="h-full flex flex-col">
@@ -109,27 +25,30 @@ const DashboardLayout: FC<DashboardLayoutProps> = ({ children }) => {
               <Image className="w-34" src={inlineLogo} alt="logo" />
             </div>
             <ul className="flex items-center h-full px-24 gap-12 text-lg font-medium">
-              <li
+              <Link
+                href="/dashboard/inbox"
                 className={`cursor-pointer border-b-4 border-transparent  hover:border-b-primary  h-full flex items-center transition-colors ${
                   pathname.includes("inbox") && "border-b-primary"
                 } px-2`}
               >
                 Inbox
-              </li>
-              <li
+              </Link>
+              <Link
+                href="/dashboard/add-friend"
                 className={`cursor-pointer border-b-4 border-transparent  hover:border-b-primary h-full flex items-center transition-colors ${
                   pathname.includes("add-friend") && "border-b-primary"
                 } px-2`}
               >
                 Add Friend
-              </li>
-              <li
+              </Link>
+              <Link
+                href="/dashboard/contacts"
                 className={`cursor-pointer border-b-4 border-transparent  hover:border-b-primary h-full flex items-center transition-colors ${
                   pathname.includes("contacts") && "border-b-primary"
                 } px-2`}
               >
                 Contacts
-              </li>
+              </Link>
             </ul>
           </div>
           <div className="flex items-center gap-10">
@@ -170,7 +89,7 @@ const DashboardLayout: FC<DashboardLayoutProps> = ({ children }) => {
               {inboxData.map((data, index) => (
                 <div
                   key={index}
-                  className="flex items-center bg-white p-3 gap-5 rounded-xl mb-2 border-2 border-transparent boxShadow"
+                  className="flex items-center bg-white p-3 gap-5 rounded-xl mb-1 mt-1 border-2 border-transparent boxShadow"
                 >
                   <div className="rounded-full w-10 h-10">
                     <Image

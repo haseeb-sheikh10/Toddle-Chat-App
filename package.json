@@ -9,9 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.3.3",
     "@next-auth/upstash-redis-adapter": "^3.0.4",
     "@reduxjs/toolkit": "^2.0.1",
     "@upstash/redis": "^1.25.2",
+    "axios": "^1.6.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "lucide-react": "^0.298.0",
@@ -19,9 +21,11 @@
     "next-auth": "^4.24.5",
     "react": "^18",
     "react-dom": "^18",
+    "react-hook-form": "^7.49.2",
     "react-hot-toast": "^2.4.1",
     "react-redux": "^9.0.4",
-    "tailwind-merge": "^2.1.0"
+    "tailwind-merge": "^2.1.0",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/node": "^20",

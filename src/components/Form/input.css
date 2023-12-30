@@ -11,10 +11,10 @@
   line-height: 30px;
   padding-left: 3rem;
   padding-right: 1rem;
-  border: 2px solid transparent;
+  border: 2px solid var(--body-color);
   border-radius: 10px;
   outline: none;
-  background-color: #d7d9dc;
+  background-color: #f8fafc;
   color: #0d0c22;
   transition: 0.5s ease;
 }
@@ -26,7 +26,7 @@
 .input:focus,
 input:hover {
   outline: none;
-  border-color: #fe4c40;
+  border-color: var(--primary-color);
   background-color: #fff;
   box-shadow: 0 0 0 5px rgb(129 140 248 / 30%);
 }
