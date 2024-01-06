@@ -9,23 +9,24 @@ export const handleAddFriend = (email: string) => async (dispatch: any) => {
   try {
     const validatedEmail = addFriendValidator.parse({ email });
 
-    console.log(validatedEmail);
     dispatch(setIsApiLoading(true));
-    const res = await axios.post("/api/friends/add", { email: validatedEmail });
+    const res = await axios.post("http://localhost:3000/api/friends/add", {
+      email: validatedEmail,
+    });
 
     dispatch(setIsApiLoading(false));
-    dispatch(setEmail(""));
-    toast.success(res.data?.message);
+    toast.success(res.data.message);
+    // dispatch(setEmail(""));
   } catch (error) {
     dispatch(setIsApiLoading(false));
-    dispatch(setEmail(""));
+    // dispatch(setEmail(""));
     if (error instanceof ZodError) {
-      toast.error("Invalid Email!");
+      toast.error(error.issues[0].message);
       return;
     }
 
     if (error instanceof AxiosError) {
-      toast.error(error.response?.data);
+      toast.error(error.response?.data?.message);
       return;
     }
 

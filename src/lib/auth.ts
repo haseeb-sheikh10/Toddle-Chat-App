@@ -1,8 +1,10 @@
 import GoogleProvider from "next-auth/providers/google";
+import GithubProvider from "next-auth/providers/github";
+
 import { UpstashRedisAdapter } from "@next-auth/upstash-redis-adapter";
 import { NextAuthOptions } from "next-auth";
 import { db } from "@/lib/db";
-import { getGoogleCredentials } from "./utils";
+import { getGithubCredentials, getGoogleCredentials } from "./utils";
 
 export const authOptions: NextAuthOptions = {
   adapter: UpstashRedisAdapter(db),
@@ -16,6 +18,10 @@ export const authOptions: NextAuthOptions = {
     GoogleProvider({
       clientId: getGoogleCredentials().clientId,
       clientSecret: getGoogleCredentials().clientSecret,
+    }),
+    GithubProvider({
+      clientId: getGithubCredentials().clientId,
+      clientSecret: getGithubCredentials().clientSecret,
     }),
   ],
   callbacks: {

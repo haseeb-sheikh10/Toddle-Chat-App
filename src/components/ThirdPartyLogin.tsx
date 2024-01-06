@@ -21,6 +21,17 @@ const ThirdPartLogin: FC<thirdPartLoginProps> = () => {
       toast.error("Something Went Wrong!");
     }
   };
+  const loginWithGithub = async () => {
+    try {
+      toast.promise(signIn("github"), {
+        loading: "Redirecting for Signin",
+        success: <b>Redirected</b>,
+        error: <b>Could Not Redirect</b>,
+      });
+    } catch (error) {
+      toast.error("Something Went Wrong!");
+    }
+  };
   return (
     <div className="flex flex-col items-center gap-2">
       <Button className="w-[80%] text-lg" handleClick={loginWithGoogle}>
@@ -57,9 +68,7 @@ const ThirdPartLogin: FC<thirdPartLoginProps> = () => {
       <Button
         className="w-[80%] border-2 border-slate-800 text-lg"
         variant="ghost"
-        handleClick={() => {
-          console.log("sign in with github");
-        }}
+        handleClick={loginWithGithub}
       >
         <Image src={github} alt="github icon" className="mr-2 h-6 w-6" />
         SignIn with Github
