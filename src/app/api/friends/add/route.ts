@@ -23,7 +23,7 @@ export const POST = async (req: Request, res: NextResponse) => {
       return NextResponse.json(
         { status: false, message: "Person Not Found", data: [] },
         {
-          status: 400,
+          status: 404,
         }
       );
     }

@@ -1,6 +1,6 @@
+import logo from "@/assets/inline-logo.png";
 import Image from "next/image";
 import { FC } from "react";
-import logo from "@/assets/inline-logo.png";
 
 interface AuthLayoutProps {
   children: React.ReactNode;

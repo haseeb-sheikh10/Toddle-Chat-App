@@ -1,12 +1,9 @@
-"use client";
-
-import Button from "@/components/ui/Button";
-import Image from "next/image";
-import { FC } from "react";
 import img from "@/assets/login.jpg";
-import Link from "next/link";
 import LoginForm from "@/components/Form/LoginForm";
 import ThirdPartLogin from "@/components/ThirdPartyLogin";
+import Image from "next/image";
+import Link from "next/link";
+import { FC } from "react";
 
 interface pageProps {}
 

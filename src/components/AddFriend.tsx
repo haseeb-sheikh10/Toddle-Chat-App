@@ -24,7 +24,7 @@ const AddFriend: FC<AddFriendProps> = () => {
           placeholder="Enter Email"
           icon={<Send className="absolute left-4 w-4 h-4 fill-none" />}
           value={email}
-          onChange={(event) => dispatch(handleChangeEmail(event))}
+          onChange={(e) => dispatch(handleChangeEmail(e.target.value))}
         />
         <Button
           isLoading={isApiLoading}

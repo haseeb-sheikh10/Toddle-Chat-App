@@ -4,11 +4,6 @@ const nextConfig = {
   redirects: async () => {
     return [
       {
-        source: "/",
-        destination: "/auth/login",
-        permanent: true,
-      },
-      {
         source: "/auth",
         destination: "/auth/login",
         permanent: true,
@@ -19,6 +14,22 @@ const nextConfig = {
         permanent: true,
       },
     ];
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+        port: "",
+        pathname: "/a/**",
+      },
+      {
+        protocol: "https",
+        hostname: "avatars.githubusercontent.com",
+        port: "",
+        pathname: "/u/**",
+      },
+    ],
   },
 };
 

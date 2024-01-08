@@ -3,11 +3,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import auth from "@/app/redux/slices/authSlice";
 import addFriend from "@/app/redux/slices/addFriendSlice";
+import friendRequest from "@/app/redux/slices/friendRequestSlice";
 
 export const store = configureStore({
   reducer: {
     auth,
     addFriend,
+    friendRequest,
   },
 });
 

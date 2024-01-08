@@ -16,10 +16,10 @@ export const handleAddFriend = (email: string) => async (dispatch: any) => {
 
     dispatch(setIsApiLoading(false));
     toast.success(res.data.message);
-    // dispatch(setEmail(""));
+    dispatch(setEmail(""));
   } catch (error) {
     dispatch(setIsApiLoading(false));
-    // dispatch(setEmail(""));
+    dispatch(setEmail(""));
     if (error instanceof ZodError) {
       toast.error(error.issues[0].message);
       return;
@@ -35,7 +35,6 @@ export const handleAddFriend = (email: string) => async (dispatch: any) => {
   }
 };
 
-export const handleChangeEmail: ChangeEventHandler<HTMLInputElement> =
-  (e: ChangeEvent<HTMLInputElement>) => (dispatch: any) => {
-    dispatch(setEmail(e.target.value));
-  };
+export const handleChangeEmail: any = (value: string) => (dispatch: any) => {
+  dispatch(setEmail(value));
+};

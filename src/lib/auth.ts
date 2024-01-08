@@ -4,7 +4,10 @@ import GithubProvider from "next-auth/providers/github";
 import { UpstashRedisAdapter } from "@next-auth/upstash-redis-adapter";
 import { NextAuthOptions } from "next-auth";
 import { db } from "@/lib/db";
-import { getGithubCredentials, getGoogleCredentials } from "./utils";
+import {
+  getGithubCredentials,
+  getGoogleCredentials,
+} from "./helpers/credentials";
 
 export const authOptions: NextAuthOptions = {
   adapter: UpstashRedisAdapter(db),
@@ -26,7 +29,7 @@ export const authOptions: NextAuthOptions = {
   ],
   callbacks: {
     async jwt({ token, user }) {
-      const dbUser = (await db.get(`user:${token.id}`)) as User | null;
+      const dbUser = (await db.get(`user:${token?.id}`)) as User | null;
 
       if (!dbUser) {
         token.id = user!.id;
@@ -37,7 +40,7 @@ export const authOptions: NextAuthOptions = {
         id: dbUser.id,
         name: dbUser.name,
         email: dbUser.email,
-        picture: dbUser.picture,
+        image: dbUser.image,
       };
     },
     async session({ session, token }) {
@@ -45,7 +48,7 @@ export const authOptions: NextAuthOptions = {
         session.user.id = token.id;
         session.user.name = token.name;
         session.user.email = token.email;
-        session.user.image = token.picture;
+        session.user.image = token.image;
       }
 
       return session;
