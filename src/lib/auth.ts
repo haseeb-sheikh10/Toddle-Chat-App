@@ -8,6 +8,7 @@ import {
   getGithubCredentials,
   getGoogleCredentials,
 } from "./helpers/credentials";
+import { fetchRedis } from "./helpers/redis";
 
 export const authOptions: NextAuthOptions = {
   adapter: UpstashRedisAdapter(db),
@@ -29,18 +30,20 @@ export const authOptions: NextAuthOptions = {
   ],
   callbacks: {
     async jwt({ token, user }) {
-      const dbUser = (await db.get(`user:${token?.id}`)) as User | null;
+      const dbUser = (await fetchRedis("get", `user:${token?.id}`)) as string;
 
-      if (!dbUser) {
+      const parsedUser = JSON.parse(dbUser) as User | null;
+
+      if (!parsedUser) {
         token.id = user!.id;
         return token;
       }
 
       return {
-        id: dbUser.id,
-        name: dbUser.name,
-        email: dbUser.email,
-        image: dbUser.image,
+        id: parsedUser.id,
+        name: parsedUser.name,
+        email: parsedUser.email,
+        image: parsedUser.image,
       };
     },
     async session({ session, token }) {

@@ -1,6 +1,6 @@
 import img from "@/assets/login.jpg";
 import LoginForm from "@/components/Form/LoginForm";
-import ThirdPartLogin from "@/components/ThirdPartyLogin";
+import ThirdPartLogin from "@/components/Form/ThirdPartyLogin";
 import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";

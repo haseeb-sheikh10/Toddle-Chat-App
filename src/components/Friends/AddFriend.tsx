@@ -18,7 +18,7 @@ const AddFriend: FC<AddFriendProps> = () => {
 
   return (
     <>
-      <div className="flex gap-2 mt-5">
+      <div className="w-[50%] flex gap-2 mt-5">
         <Input
           type="email"
           placeholder="Enter Email"

@@ -96,7 +96,7 @@ body {
   transition: 0.5s ease;
 }
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 5px;
 }
 ::-webkit-scrollbar-track {
@@ -105,4 +105,4 @@ body {
 ::-webkit-scrollbar-thumb {
   background-color: var(--primary-color);
   border-radius: 15px;
-}
+} */

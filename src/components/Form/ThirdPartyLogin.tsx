@@ -1,7 +1,7 @@
 "use client";
 
 import { FC } from "react";
-import Button from "./ui/Button";
+import Button from "../ui/Button";
 import Image from "next/image";
 import github from "@/assets/github-icon.svg";
 import { signIn } from "next-auth/react";

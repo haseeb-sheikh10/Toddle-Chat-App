@@ -26,12 +26,12 @@ const NavMenu: FC<NavMenuProps> = () => {
         Add Friend
       </Link>
       <Link
-        href="/dashboard/contacts"
+        href="/dashboard/friends"
         className={`cursor-pointer border-b-4 border-transparent  hover:border-b-primary h-full flex items-center transition-colors ${
           pathname.includes("contacts") && "border-b-primary"
         } px-2`}
       >
-        Contacts
+        Friends
       </Link>
     </div>
   );
